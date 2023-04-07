@@ -1,6 +1,6 @@
 package _tempTest;
 
-import _temp.BaseClass;
+
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
