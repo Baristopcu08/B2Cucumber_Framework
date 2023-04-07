@@ -1,9 +1,12 @@
 {
+
   "application": {
     "url": "https://opencart.abstracta.us/",
     "username": "deneme@deneme.com",
     "password": "deneme"
   },
+
+
   "topmenu": {
     "myaccount": {
       "type": "xpath",
@@ -18,6 +21,9 @@
       "locator": "//div[@id='top-links']//a[contains(.,'Wish List')]"
     }
   },
+
+
+
   "login": {
     "username": {
       "type": "id",

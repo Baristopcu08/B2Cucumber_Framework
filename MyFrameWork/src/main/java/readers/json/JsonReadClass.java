@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class JsonReader {
+public class JsonReadClass {
     public static void main(String[] args) throws FileNotFoundException {
         String jsonFile = "src/test/resources/datafiles/Elements.json";
 
