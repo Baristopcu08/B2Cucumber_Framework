@@ -26,6 +26,17 @@ public class Login extends BaseClass {
     HomePage hp=new HomePage();
     LoginPage lp=new LoginPage();
 
+
+    @Given("user logs in with {string} and {string}")
+    public void userLogsInWithAnd(String username, String password) {
+        userClicksMyAccountLink();
+        userClicksLoginLink();
+        loginPageShouldBeVisible();
+        $(lp.username).sendKeys(username).
+        $(lp.password).sendKeys(password);
+        userClicksLoginButton();
+    }
+
     @Given("user on homepage")
     public void userOnHomepage() {
         open(PropertyReader.read().get("url"));
@@ -143,4 +154,6 @@ public class Login extends BaseClass {
     public void userShouldNotLoggedOut() {
         loginShouldBeSuccessfull();
     }
+
+
 }

@@ -13,15 +13,15 @@ import pageObjects.SearchProduct;
 import java.util.List;
 
 public class WishList extends BaseClass {
-    SearchProduct searchPage;
-    ProductShowPage showPage;
+    SearchProduct searchPage=new SearchProduct();
+    ProductShowPage showPage=new ProductShowPage();
 
 
     @When("Enter any existing Product name into the Search text box field")
     public void enterAnyExistingProductNameIntoTheSearchTextBoxField(DataTable dataTable) {
 
         List<String> strings = dataTable.asList();
-        searchPage=new SearchProduct();
+
         searchPage.searhBox.sendKeys(strings.get(0));
     }
 

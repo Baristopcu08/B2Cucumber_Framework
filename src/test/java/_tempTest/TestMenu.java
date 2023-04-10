@@ -31,7 +31,9 @@ public class TestMenu extends BaseSteps {
     @Test
     public void test1(){
         driver.get("https://opencart.abstracta.us/");
+
         TOP_MENU.click("My Account", "Login");
+
         RIGHT_MENU.click("Register");
         RIGHT_MENU.click("My Account");
         RIGHT_MENU.click("Address Book");
@@ -49,6 +51,7 @@ public class TestMenu extends BaseSteps {
         FOOTER_MENU.click("About Us");
         FOOTER_MENU.click("Contact Us");
         FOOTER_MENU.click("Newsletter");
+
 
         TOP_MENU.click("My Account", "Login");
         sendkeys(By.id("input-email"),"deneme@deneme.com");
