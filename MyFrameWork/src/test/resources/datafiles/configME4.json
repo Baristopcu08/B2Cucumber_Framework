@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id" : 1,
+      "usertype" : "admin",
+      "name": "admin name",
+      "lastname": "admin lastname"
+      },
+    {
+      "id" : 2,
+      "usertype" : "user",
+      "name": "user1 name",
+      "lastname": "user1 lastname"
+    },
+    {
+      "id" : 3,
+      "usertype" : "user",
+      "name": "user2 name",
+      "lastname": "user2 lastname"
+    }
+
+  ]
+}
