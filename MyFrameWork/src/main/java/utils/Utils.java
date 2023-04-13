@@ -1,5 +1,6 @@
 package utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import driver.Driver;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
@@ -8,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -131,5 +134,32 @@ public class Utils {
         return mainNode.get(key).toString();
 
     }
+
+    /**
+     *
+     * @param path hem json hem yaml okuyabilir
+     * @param tClass
+     * @return
+     * @param <T>
+     * @throws IOException
+     */
+    public static <T> T readConfig(String path, Class<T> tClass) throws IOException {
+
+        if (path.endsWith(".json")) {
+            ObjectMapper mapper = new ObjectMapper();
+            try (FileReader reader = new FileReader(path)) {
+                return mapper.readValue(reader, tClass);
+            }
+        } else if (path.endsWith(".yaml") || path.endsWith(".yml")) {
+            Yaml yaml = new Yaml();
+            try (FileReader reader = new FileReader(path)) {
+                return yaml.loadAs(reader, tClass);
+            }
+        } else {
+            throw new IllegalArgumentException("Unsupported file type: " + path);
+        }
+    }
+
+
 
 }
