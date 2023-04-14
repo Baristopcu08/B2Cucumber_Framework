@@ -160,6 +160,8 @@ public class Utils {
         }
     }
 
-
-
+    public static boolean isFileExist(String fileWithPath){
+        File f = new File(fileWithPath);
+        return f.exists() && !f.isDirectory();
+    }
 }

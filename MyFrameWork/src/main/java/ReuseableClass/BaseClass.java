@@ -18,9 +18,10 @@ import static ReuseableClass._Conditions.*;
 import static driver.Driver.getDriver;
 import static driver.Driver.getWait;
 
+
 public class BaseClass {
 
-    protected WebDriver driver= getDriver();
+    public static WebDriver driver= getDriver();
     protected WebDriverWait wait= getWait();
     private WebElement element;
     private By locator;

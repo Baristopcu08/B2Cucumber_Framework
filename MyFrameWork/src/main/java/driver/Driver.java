@@ -9,16 +9,27 @@ import static driver.DriverFactory.*;
 
 public class Driver {
     private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
+
+    private static ThreadLocal<Browsers> browsers = new ThreadLocal<>();
+
     private static ThreadLocal<WebDriverWait> waits = new ThreadLocal<>();
 
     public static WebDriver getDriver(){
-        return getDriver(Browsers.chrome);
+        if(browsers.get()==null){
+           browsers.set(Browsers.chrome);
+        }
+        return getDriver(browsers.get());
+
     }
     public static WebDriver getDriver(Browsers browser){
+        //if (browsers.get()==null)
+            browsers.set(browser);
+
+
         if (drivers.get() == null){
             switch (browser){
                 case firefox:
-                    drivers.set(createFirefox());
+                    drivers.set(creatgeFirefox());
                     break;
                 case edge:
                     drivers.set(createEdge());
@@ -47,6 +58,7 @@ public class Driver {
             drivers.get().quit();
             drivers.set(null);
             waits.set(null);
+
         }
     }
 

@@ -44,7 +44,8 @@ public class Login extends BaseClass {
 
     @When("user clicks My Account Link")
     public void userClicksMyAccountLink() {
-        hp.myAccount.click();
+        wait.until(ExpectedConditions.visibilityOf(hp.myAccount)).click();
+
 
     }
 

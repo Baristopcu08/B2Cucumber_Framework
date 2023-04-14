@@ -1,11 +1,14 @@
 package runners;
 
 
+import ReuseableClass.BaseClass;
+import driver.Browsers;
 import driver.Driver;
 import io.cucumber.java.After;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.AfterTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 
 @CucumberOptions(
 
@@ -20,10 +23,11 @@ import org.testng.annotations.AfterTest;
 
 public class Featured extends AbstractTestNGCucumberTests {
 
-    @AfterTest
-    public void after() {
-        Driver.quitDriver();
-    }
+    @BeforeTest
+    @Parameters("browser")
+    public  void beforeTest( @Optional String browser){
+        Driver.getDriver(Browsers.valueOf(browser));
 
+    }
 }
 
