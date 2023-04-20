@@ -1,14 +1,11 @@
 package stepdefs;
 
-import ReuseableClass.BaseClass;
 import driver.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import readers.property.PropertyReader;
 
 
@@ -38,7 +35,6 @@ public class Hooks {
 
     @After(order = 0)
     public void after0(){
-
         Driver.quitDriver();
     }
 

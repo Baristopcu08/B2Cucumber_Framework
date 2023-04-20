@@ -30,7 +30,7 @@ public class BaseClass {
     public BaseClass() {
     }
 
-    public   BaseClass $(WebElement element){
+    public   BaseClass $ (WebElement element){
         this.element=element;
         return this;
     }
@@ -226,6 +226,19 @@ public class BaseClass {
             }
         }
         getDriver().switchTo().window(origin);
+    }
+
+    public static void sleep(int milis){
+        try {
+            Thread.sleep(milis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public BaseClass hover(){
+        new Actions(driver).moveToElement(element).perform();
+        return this;
     }
 
 }

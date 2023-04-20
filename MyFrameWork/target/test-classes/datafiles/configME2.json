@@ -1,30 +1,29 @@
 {
   "url": "https://opencart.abstracta.us/",
   "username": "deneme@deneme.com",
-  "password": "deneme",
-
-    "users": [
+  "password": "deneme1",
+  "types": [
+    "type1",
+    "type2",
+    "type3"
+  ],
+  "address": {
+    "street": "street",
+    "number": 12,
+    "city": "Istanbul"
+  },
+  "users": [
     {
       "type": "user",
-      "valid": "true",
+      "valid": true,
       "username": "deneme@deneme.com",
-      "password": "deneme",
-      "address" : {
-        "street": "street",
-        "number" : 12,
-        "city" : "Istanbul"
-      }
+      "password": "deneme"
     },
     {
       "type": "user",
-      "valid": "false",
+      "valid": false,
       "username": "deneme1@deneme.com",
-      "password": "deneme",
-      "address" : {
-      "street": "street",
-      "number" : 12,
-      "city" : "Istanbul"
-    }
+      "password": "deneme"
     }
   ]
 }

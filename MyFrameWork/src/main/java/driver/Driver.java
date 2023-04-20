@@ -29,7 +29,7 @@ public class Driver {
         if (drivers.get() == null){
             switch (browser){
                 case firefox:
-                    drivers.set(creatgeFirefox());
+                    drivers.set(createFirefox());
                     break;
                 case edge:
                     drivers.set(createEdge());

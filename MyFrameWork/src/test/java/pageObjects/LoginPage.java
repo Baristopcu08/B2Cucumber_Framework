@@ -1,5 +1,6 @@
 package pageObjects;
 
+import ReuseableClass.BaseClass;
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static driver.Driver.getDriver;
 
-public class LoginPage {
+public class LoginPage extends BaseClass {
 
 
     public LoginPage() {
@@ -34,4 +35,11 @@ public class LoginPage {
     public ForgottenPasswordPage navigateForgottenPasswordPage(){
         return new  ForgottenPasswordPage();
     }
+
+    public void Login(String userName,String passWord){
+        $(username).sendKeys(userName);
+        $(password).sendKeys(passWord);
+        $(loginButton).click();
+    }
+
 }
